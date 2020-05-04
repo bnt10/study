@@ -7,9 +7,9 @@ module.exports = {
   siteMetadata: {
     url,
     siteUrl: url,
-    title: 'Blog by John Doe',
+    title: 'true type 개발 블로그',
     subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+      '개발 스터디 블로그로 개인 공부내용으로 작성됩니다.',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -27,8 +27,8 @@ module.exports = {
       },
     ],
     author: {
-      name: 'John Doe',
-      email: '#',
+      name: 'Jin Hyoung',
+      email: 'truetype92@gmail.com',
       telegram: '#',
       twitter: '#',
       github: '#',
