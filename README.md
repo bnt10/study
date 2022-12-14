@@ -1,5 +1,3 @@
-# study
-
 [http]
 An Etag header is included in the HTTP response for an API resource. What are two benefits of using the value of the Etag for future interactions involving the same API resource
 
