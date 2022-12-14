@@ -1,14 +1,13 @@
 # study
 
-목표인증
+[http]
+An Etag header is included in the HTTP response for an API resource. What are two benefits of using the value of the Etag for future interactions involving the same API resource
 
- 【한글자막】 Next.js & React - 완벽 정복 가이드 (incl. Two Paths!)
+caching and optimization of response payloads
 
-강의 정리 자료 
-1. [Next.js 소개](http://localhost:8000/react/2022-12.10---next-study-01/)
+creating conditional requests
 
-2. [Next.js 파일 기반 라우팅](http://localhost:8000/react/2022-12.13---next-study-02/)
+Explanation
 
-<img width="435" alt="스크린샷 2022-12-13 오후 8 50 20" src="https://user-images.githubusercontent.com/43377349/207310988-5257a262-183a-4759-a818-87b20a7ea0c7.png">
-
-<img width="1426" alt="스크린샷 2022-12-13 오후 8 58 40" src="https://user-images.githubusercontent.com/43377349/207312145-98d96e84-0951-4b83-86c9-977119f4f759.png">
+- The ETag HTTP response header is an identifier for a specific version of a resource. It lets caches be more efficient and save bandwidth, as a web server does not need to resend a full response if the content has not changed. Additionally, etags help prevent simultaneous updates of a resource from overwriting each other ("mid-air collisions").
+- The ETag or entity tag is part of HTTP, the protocol for the World Wide Web. It is one of several mechanisms that HTTP provides for Web cache validation, which allows a client to make conditional requests.
