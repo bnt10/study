@@ -18,3 +18,9 @@
 Which action is the appropriate response?
 
   **Look for a Retry-After header in the response and resend the request after the amount of time indicated.**
+
+
+- Which two countermeasures help reduce the risk of playback attacks? (Choose two.)
+
+  Implement message authentication (HMAC).
+  Use short-lived access tokens.
