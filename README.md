@@ -23,3 +23,8 @@
 
 
 ![image](https://user-images.githubusercontent.com/43377349/208642954-a4e66195-7007-4691-b2ab-4b015bb5a4a0.png)
+
+### 22/12/27
+#### 강의 정리 자료
+
+![image](https://user-images.githubusercontent.com/43377349/209547903-fc2a8674-1dc1-4203-917b-91ae3d96491f.png)
