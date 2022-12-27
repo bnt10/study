@@ -28,3 +28,5 @@
 #### 강의 정리 자료
 
 ![image](https://user-images.githubusercontent.com/43377349/209547903-fc2a8674-1dc1-4203-917b-91ae3d96491f.png)
+
+![image](https://user-images.githubusercontent.com/43377349/209660788-5ac1e314-644f-4ccd-9c13-c5c10d5b0df9.png)
