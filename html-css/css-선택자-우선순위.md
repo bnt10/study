@@ -5,8 +5,25 @@
 
 
 ## 우선 판단 기준
-1. 점수가 높은 선언이 우선함
+1. 선언된 선택자의 점수를 합산합니다.
+2. 점수가 높은 선언이 우선함
 3. 점수가 같으면, 마지막 해석 기준으로 우선함
+
+## 예시
+  ```javascript
+  <div class='user'>
+    <p id='uesr-id'>user01 </p>
+  </div>
+  
+  .user {
+    font-size: 12px;
+  }
+  #user-id {
+    font-size: 18px;
+  }
+  
+  # id의 점수는 100점 class 점수는 10점 따라서 id가 우선 적용되여 font-size 는 18px이 됩니다.
+  ```
 
 ## 우선순위
 
