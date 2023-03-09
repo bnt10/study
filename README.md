@@ -18,6 +18,7 @@
      - [함수 선언문 vs 함수표현식](정리/js/함수%20선언문%20vs%20함수표현식.md)
      - [Prototype](정리/js/Prototype.md)
      - [메모리관리](정리/js/메모리관리.md)
+     - [Generator](정리/js/Generator.md)
    - React
      - [createRef vs useRef](정리/react/createRef%20vs%20useRef.md)
    - CI/CD
