@@ -3,6 +3,7 @@
 ## vscode setting
 `setting.json`에 아래와 같이 설정
 ```
+"tailwindCSS.experimental.classRegex": [":(?:.|\n)*?[\"'`]([^\"'`]*).*?,"],
 "tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*Styles"]
 ```
 
