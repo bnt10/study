@@ -49,7 +49,7 @@ export const server = setupServer(...handlers)
 ```
 
 ```
-tocuh src/mocks/index.ts
+touch src/mocks/index.ts
 
 async function initMocks() {
   if (typeof window === 'undefined') {
