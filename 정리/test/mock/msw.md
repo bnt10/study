@@ -49,7 +49,8 @@ export const server = setupServer(...handlers)
 ```
 
 ```
-src/mocks/index.ts
+tocuh src/mocks/index.ts
+
 async function initMocks() {
   if (typeof window === 'undefined') {
     const { server } = await import('./server')
