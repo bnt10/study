@@ -103,3 +103,9 @@ const nextConfig = {
 
 module.exports = nextConfig
 ```
+
+## env 파일 생성
+```
+//.env.development
+NEXT_PUBLIC_API_MOCKING=enabled
+```
