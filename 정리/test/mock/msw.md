@@ -38,9 +38,9 @@ export const handlers = [
 
 ## sserver && browser 환경 설정
 ```
-touch src/mocks/server.js
+touch src/mocks/server.ts
 
-// src/mocks/server.js
+// src/mocks/server.ts
 import { setupServer } from 'msw/node'
 import { handlers } from './handlers'
 
@@ -68,9 +68,9 @@ export {}
 npx msw init <PUBLIC_DIR> --save
 npx msw init public/ --save
 
-touch src/mocks/browser.js
+touch src/mocks/browser.ts
 
-// src/mocks/browser.js
+// src/mocks/browser.ts
 import { setupWorker } from 'msw'
 import { handlers } from './handlers'
 
