@@ -65,8 +65,8 @@ initMocks()
 
 export {}
 ```
+
 ```
-npx msw init <PUBLIC_DIR> --save
 npx msw init public/ --save
 
 touch src/mocks/browser.ts
