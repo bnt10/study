@@ -92,3 +92,6 @@ npx msw init public/ --save
   },
 ```
 
+## 적용코드
+https://github.com/bnt10/nextjs/releases/tag/v1.0-msw
+
