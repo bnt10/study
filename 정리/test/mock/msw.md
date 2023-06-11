@@ -85,5 +85,10 @@ NEXT_PUBLIC_API_MOCKING=enabled
 npx msw init public/ --save
 ```
 
-
+## package.json에 msw workingDirectory 설정
+```
+  "msw": {
+    "workerDirectory": "public"
+  },
+```
 
