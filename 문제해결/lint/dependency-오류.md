@@ -20,7 +20,34 @@ dependencies에 정의되어 있는지 확인합니다.
 
 ## .eslintrc에 msw 관련 rule을 추가
 ```
-
+  "overrides": [
+    // Configuration for TypeScript files
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "tailwindcss",
+        "simple-import-sort"
+      ],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb-typescript",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+          "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "packageDir": "./"
+          }
+        ]
+      }
+  ],
 // Configuration for msw
 {
   "files": ["**/mocks/**"],
