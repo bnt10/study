@@ -34,10 +34,10 @@ const arr = Array.from({length:5} , (_, i) =>i)
 ```javascript
 const arr = new Array(5).fill(0)
 ```
-6. map, filter, reduce :
+7. map, filter, reduce :
   - map : 배열의 각 요소에 동일한 함수를 적용하여 결과로 새 배열을 만들때 사용합니다. React에서는 렌더링 할때 주로 사용됩니다.
   - filter : 배열의 요소 중 특정 조건을 만족하는 요소로만 배열을 새로 만들고 싶을 때 사용합니다.
-  - reduce : 배열의 모든 요소를 순회하며 **누적 계산값** 을 생성할 때 사용합니다. 배열을 단일 값으로 축약 할떄도 사용 유용 합니다.
+  - reduce : 배열의 모든 요소를 순회하며 **누적 계산값** 을 생성할 때 사용합니다. 배열을 단일 값으로 축약 할떄도 유용 합니다.
    
 ```javasciprt
 // map
