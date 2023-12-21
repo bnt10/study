@@ -143,3 +143,79 @@ npm run storybook
 ```
 
 이제 버튼 컴포넌트와 그에 대한 스토리를 Storybook에서 볼 수 있습니다.
+
+
+# 전역 상태 관리
+
+Storybook에서 Recoil과 같은 전역 상태 관리를 주입하려면 다음과 같은 과정이 필요합니다. 
+`RecoilRoot`를 스토리에 포함시키고, 필요한 경우 초기 상태를 설정해야 합니다. 여기에는 몇 가지 단계가 있습니다.
+
+
+### 1. Storybook의 Decorators 사용
+
+Decorators는 스토리를 렌더링할 때 반복되는 컨텍스트를 제공합니다. `RecoilRoot`를 전역 또는 특정 스토리에 Decorator로 추가하여 각 스토리가 Recoil 상태를 사용할 수 있도록 합니다.
+
+#### 전역 Decorator 설정 (`/.storybook/preview.js`)
+
+모든 스토리에 대해 `RecoilRoot`를 적용하려면, `.storybook/preview.js` 파일에 전역 Decorator를 추가합니다.
+
+```javascript
+import React from 'react';
+import { RecoilRoot } from 'recoil';
+
+export const decorators = [
+  (Story) => (
+    <RecoilRoot>
+      <Story />
+    </RecoilRoot>
+  ),
+];
+```
+
+### 2. 특정 스토리에 Recoil 적용
+
+특정 스토리에만 Recoil을 적용하려면, 해당 스토리 파일에 직접 Decorator를 추가할 수 있습니다.
+
+```tsx
+// 예시: Button.stories.tsx
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { RecoilRoot } from 'recoil';
+import Button from '../components/Button';
+
+export default {
+  title: 'Components/Button',
+  component: Button,
+  decorators: [(Story) => <RecoilRoot><Story/></RecoilRoot>],
+} as Meta;
+
+const Template: Story = (args) => <Button {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Click me',
+};
+```
+
+### 3. 초기 상태 설정
+
+스토리에서 특정 Recoil 상태의 초기 값을 설정하려면, `RecoilRoot`의 `initializeState` 속성을 사용할 수 있습니다.
+
+```tsx
+export const decorators = [
+  (Story) => (
+    <RecoilRoot initializeState={({ set }) => {
+      // 여기에서 초기 상태를 설정합니다.
+      set(someAtom, initialValue);
+    }}>
+      <Story />
+    </RecoilRoot>
+  ),
+];
+```
+
+### 4. 상태 변경 반영
+
+컴포넌트가 Recoil 상태에 의존하는 경우, 스토리에서 해당 상태를 변경하고 결과를 확인하려면 컴포넌트와 연결된 상태를 적절히 조작해야 합니다. 이는 사용자 상호작용을 모의하거나, 특정 상태에서 컴포넌트의 렌더링 결과를 확인하는 데 유용할 수 있습니다.
+
+
