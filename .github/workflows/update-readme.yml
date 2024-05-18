@@ -1,0 +1,27 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main # 또는 대상 브랜치명을 설정하세요
+    paths-ignore:
+      - '**/*.md' # Markdown 파일을 제외한 모든 변경 사항에 반응
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # 전체 커밋 히스토리를 가져옵니다
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # 노드 버전 선택
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run update script
+        run: node scripts/updateReadme.js
