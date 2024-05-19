@@ -3,7 +3,7 @@ name: Update README
 on:
   push:
     branches:
-      - main # 또는 대상 브랜치명을 설정하세요
+      - master # 또는 대상 브랜치명을 설정하세요
     paths-ignore:
       - '**/*.md' # Markdown 파일을 제외한 모든 변경 사항에 반응
 
@@ -18,10 +18,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # 노드 버전 선택
+          node-version: '20' # 노드 버전 선택
 
       - name: Install dependencies
         run: npm install
 
+      - name: Compile TypeScript
+        run: npx tsc
+
       - name: Run update script
-        run: node scripts/updateReadme.js
+        run: node dist/scripts/updateReadme.js
