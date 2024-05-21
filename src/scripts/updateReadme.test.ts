@@ -44,14 +44,15 @@ describe('updateReadme functions', () => {
     const markdown = await generateMarkdownEntry(
       'src',
       '',
+      './src',
       1,
       mockConfig.exclude,
       mockConfig.order,
     );
     expect(markdown).toContain('## troubleshooting');
     expect(markdown).toContain('## dev_notes');
-    expect(markdown).toContain('- [example1](./troubleshooting/example1.md)');
-    expect(markdown).toContain('- [example2](./dev_notes/example2.md)');
+    expect(markdown).toContain('- [example1](./src/troubleshooting/example1.md)');
+    expect(markdown).toContain('- [example2](./src/dev_notes/example2.md)');
   });
 
   it('should update README.md correctly', async () => {
@@ -59,12 +60,9 @@ describe('updateReadme functions', () => {
     const readmeContent = await fs.readFile('README.md', 'utf-8');
     expect(readmeContent).toContain('# Project Title');
     expect(readmeContent).toContain('## troubleshooting');
-    expect(readmeContent).toContain(
-      '- [example1](./troubleshooting/example1.md)',
-    );
+    expect(readmeContent).toContain('- [example1](./src/troubleshooting/example1.md)');
     expect(readmeContent).toContain('## dev_notes');
-    expect(readmeContent).toContain('- [example2](./dev_notes/example2.md)');
-
+    expect(readmeContent).toContain('- [example2](./src/dev_notes/example2.md)');
     expect(readmeContent).toContain('## Footer');
   });
 });

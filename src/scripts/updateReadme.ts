@@ -15,6 +15,7 @@ async function loadConfig() {
 export async function generateMarkdownEntry(
   dirPath: string,
   basePath: string = '',
+  srcBasePath: string = '',
   level: number = 1,
   exclude: string[] = [],
   order: string[] = [],
@@ -49,6 +50,7 @@ export async function generateMarkdownEntry(
     const nestedMarkdown = await generateMarkdownEntry(
       filePath,
       path.join(basePath, folder),
+      srcBasePath,
       level + 1,
       exclude,
       order,
@@ -66,7 +68,7 @@ export async function generateMarkdownEntry(
 
   for (const file of files) {
     const relativePath = path
-      .join(basePath, file)
+      .join(srcBasePath, basePath, file)
       .replace(/\\/g, '/')
       .replace(/ /g, '%20');
     const markdownLink = `[${file.replace('.md', '')}](./${relativePath})`;
@@ -85,6 +87,7 @@ export async function updateReadme() {
   const markdownContent = await generateMarkdownEntry(
     srcDir,
     '',
+    baseUrl,
     1,
     exclude,
     order,
