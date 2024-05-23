@@ -45,6 +45,7 @@
   - [json.Unmarshal vs json.Decoder](./src/dev_notes/golang/json.Unmarshal%20vs%20json.Decoder.md)
   - [Protobuf](./src/dev_notes/golang/Protobuf.md)
   - [Tutorial_01](./src/dev_notes/golang/Tutorial_01.md)
+  - [Tutorial_02](./src/dev_notes/golang/Tutorial_02.md)
 ### html-css
 
 #### 성능
