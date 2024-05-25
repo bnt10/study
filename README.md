@@ -1,4 +1,4 @@
-# Table of Contentsasdasdasdasdasd
+# Table of Contents
 
 ## troubleshooting
 ### git
@@ -136,5 +136,3 @@
 
 
 ## Footer
-
-Some footer information.

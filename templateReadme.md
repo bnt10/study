@@ -1,7 +1,5 @@
-# Table of Contentsasdasdasdasdasd
+# Table of Contents
 
 {updateReadme}
 
 ## Footer
-
-Some footer information.
