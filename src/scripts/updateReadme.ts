@@ -22,7 +22,6 @@ export async function generateMarkdownEntry(
 ): Promise<string> {
   const entries = await fs.readdir(dirPath, { withFileTypes: true });
 
-  // 폴더와 파일 분리 및 정렬
   const folders = entries
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name);
@@ -30,7 +29,6 @@ export async function generateMarkdownEntry(
     .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
     .map((entry) => entry.name);
 
-  // 폴더 순서 설정 (order 배열에 지정된 순서로 정렬)
   const sortedFolders = [...folders].sort((a, b) => {
     const orderA = order.indexOf(a);
     const orderB = order.indexOf(b);
@@ -81,8 +79,8 @@ export async function generateMarkdownEntry(
 export async function updateReadme() {
   const config = await loadConfig();
   const { baseUrl, exclude, order } = config;
-  const rootDir = path.join(__dirname, '../../'); // 루트 디렉토리로의 상대 경로
-  const srcDir = path.join(rootDir, baseUrl); // readmeConfig.json 파일에서 baseUrl 읽기
+  const rootDir = path.join(__dirname, '../../');
+  const srcDir = path.join(rootDir, baseUrl);
   const readmePath = path.join(rootDir, 'README.md');
   const markdownContent = await generateMarkdownEntry(
     srcDir,
@@ -91,7 +89,7 @@ export async function updateReadme() {
     1,
     exclude,
     order,
-  ); // src 디렉토리 기준으로 경로 설정
+  );
 
   const templatePath = path.join(rootDir, 'templateReadme.md');
   const templateContent = await fs.readFile(templatePath, 'utf-8');

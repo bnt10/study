@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "update-readme": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/scripts/updateReadme.ts"
+    "update-readme": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/scripts/updateReadme.ts",
+    "setup-hooks": "sh src/scripts/setup-hooks.sh"
   },
   "repository": {
     "type": "git",

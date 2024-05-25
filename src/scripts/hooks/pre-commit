@@ -1,0 +1,34 @@
+#!/bin/sh
+
+echo "Running pre-commit hook..."
+
+# 변경된 파일 중 .md 확장자를 가진 파일이 있는지 검사
+md_files=$(git diff --cached --name-only | grep '\.md$')
+
+if [ -z "$md_files" ]; then
+    echo "No .md files detected, skipping update-readme script"
+else
+    echo ".md files detected:"
+    echo "$md_files"
+    echo "Running update-readme script..."
+
+    # .md 파일이 있을 경우 README.md 업데이트 스크립트 실행
+    yarn run update-readme
+
+    if [ $? -eq 0 ]; then
+        echo "update-readme script executed successfully"
+
+        # README.md 파일을 스테이징
+        git add ./README.md
+
+        if [ $? -eq 0 ]; then
+            echo "README.md successfully added to the staging area"
+        else
+            echo "Failed to add README.md to the staging area"
+            exit 1
+        fi
+    else
+        echo "update-readme script failed"
+        exit 1
+    fi
+fi
