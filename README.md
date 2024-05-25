@@ -99,6 +99,8 @@
   - [외부 이미지 사용](./src/dev_notes/nextjs/외부%20이미지%20사용.md)
   - [작업순서](./src/dev_notes/nextjs/작업순서.md)
   - [페이지 이동](./src/dev_notes/nextjs/페이지%20이동.md)
+### Python
+  - [설치-window](./src/dev_notes/Python/설치-window.md)
 ### react
   - [createRef vs useRef](./src/dev_notes/react/createRef%20vs%20useRef.md)
   - [forwardRef](./src/dev_notes/react/forwardRef.md)
