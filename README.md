@@ -41,6 +41,8 @@
   - [null, undefined, undeclared, NaN](./src/dev_notes/CS/null,%20undefined,%20undeclared,%20NaN.md)
   - [Reflow와Repaint](./src/dev_notes/CS/Reflow와Repaint.md)
   - [브라우저의 렌더링 원리](./src/dev_notes/CS/브라우저의%20렌더링%20원리.md)
+### Git
+  - [pre-commit](./src/dev_notes/Git/pre-commit.md)
 ### golang
   - [json.Unmarshal vs json.Decoder](./src/dev_notes/golang/json.Unmarshal%20vs%20json.Decoder.md)
   - [Protobuf](./src/dev_notes/golang/Protobuf.md)
