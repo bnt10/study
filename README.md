@@ -53,6 +53,7 @@
   - [Tutorial_05](./src/dev_notes/golang/Tutorial_05.md)
   - [Tutorial_06](./src/dev_notes/golang/Tutorial_06.md)
   - [Tutorial_07](./src/dev_notes/golang/Tutorial_07.md)
+  - [Tutorial_08](./src/dev_notes/golang/Tutorial_08.md)
 ### html-css
 
 #### 성능
