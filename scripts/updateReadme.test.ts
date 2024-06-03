@@ -1,11 +1,14 @@
 import mock from 'mock-fs';
 import { promises as fs } from 'fs';
+import path from 'path';
 import { generateMarkdownEntry, updateReadme } from './updateReadme';
 
 const mockConfig = {
   baseUrl: './src',
   exclude: ['scripts'],
   order: ['troubleshooting', 'dev_notes'],
+  readmePath: './README.md',
+  templatePath: './templateReadme.md'
 };
 
 const mockTemplate = `
@@ -22,6 +25,8 @@ Some footer information.
 `;
 
 describe('updateReadme functions', () => {
+  const configFilePath = 'readmeConfig.json';
+
   beforeEach(() => {
     mock({
       'src/troubleshooting': {
@@ -56,8 +61,8 @@ describe('updateReadme functions', () => {
   });
 
   it('should update README.md correctly', async () => {
-    await updateReadme();
-    const readmeContent = await fs.readFile('README.md', 'utf-8');
+    await updateReadme(configFilePath);
+    const readmeContent = await fs.readFile(mockConfig.readmePath, 'utf-8');
     expect(readmeContent).toContain('# Project Title');
     expect(readmeContent).toContain('## troubleshooting');
     expect(readmeContent).toContain('- [example1](./src/troubleshooting/example1.md)');

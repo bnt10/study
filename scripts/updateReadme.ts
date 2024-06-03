@@ -1,13 +1,27 @@
 import { promises as fs } from 'fs';
 import { fileURLToPath } from 'url';
 import * as path from 'path';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 // ES 모듈에서 __dirname 및 __filename 설정
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function loadConfig() {
-  const configPath = path.join(__dirname, '../../readmeConfig.json');
+// CLI 옵션 설정
+const argv = yargs(hideBin(process.argv))
+  .option('config', {
+    alias: 'c',
+    type: 'string',
+    description: 'Path to the config file',
+  })
+  .help()
+  .argv as { config?: string };
+
+// 설정 파일 경로 결정
+const configPath = argv.config || path.resolve(process.cwd(), 'readmeConfig.json');
+
+async function loadConfig(configPath: string) {
   const configContent = await fs.readFile(configPath, 'utf-8');
   return JSON.parse(configContent);
 }
@@ -76,12 +90,16 @@ export async function generateMarkdownEntry(
   return markdown;
 }
 
-export async function updateReadme() {
-  const config = await loadConfig();
-  const { baseUrl, exclude, order } = config;
-  const rootDir = path.join(__dirname, '../../');
+export async function updateReadme(configPath: string) {
+  const config = await loadConfig(configPath);
+  const { baseUrl, exclude, order, readmePath: configReadmePath, templatePath: configTemplatePath } = config;
+  
+  const rootDir = process.cwd();
   const srcDir = path.join(rootDir, baseUrl);
-  const readmePath = path.join(rootDir, 'README.md');
+  
+  const readmePath = configReadmePath ? path.resolve(rootDir, configReadmePath) : path.join(rootDir, 'README.md');
+  const templatePath = configTemplatePath ? path.resolve(rootDir, configTemplatePath) : path.join(rootDir, 'templateReadme.md');
+
   const markdownContent = await generateMarkdownEntry(
     srcDir,
     '',
@@ -91,7 +109,6 @@ export async function updateReadme() {
     order,
   );
 
-  const templatePath = path.join(rootDir, 'templateReadme.md');
   const templateContent = await fs.readFile(templatePath, 'utf-8');
 
   const readmeContent = templateContent.replace(
@@ -102,4 +119,5 @@ export async function updateReadme() {
   await fs.writeFile(readmePath, readmeContent);
 }
 
-updateReadme().catch(console.error);
+// 설정 파일 경로를 인자로 전달하여 updateReadme 호출
+updateReadme(configPath).catch(console.error);

@@ -8,13 +8,13 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "./scripts",
     "declaration": true,
     "sourceMap": true
   },
   "ts-node": {
     "esm": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["scripts/**/*.ts"],
   "exclude": ["node_modules", "**/*.test.ts"]
 }

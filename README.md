@@ -1,5 +1,8 @@
 # Table of Contents
 
+## projects
+### update-readme
+  - [config관리 방법](./src/projects/update-readme/config관리%20방법.md)
 ## troubleshooting
 ### git
   - [Merage](./src/troubleshooting/git/Merage.md)
@@ -54,6 +57,7 @@
   - [Tutorial_06](./src/dev_notes/golang/Tutorial_06.md)
   - [Tutorial_07](./src/dev_notes/golang/Tutorial_07.md)
   - [Tutorial_08](./src/dev_notes/golang/Tutorial_08.md)
+  - [Tutorial_09](./src/dev_notes/golang/Tutorial_09.md)
 ### html-css
 
 #### 성능

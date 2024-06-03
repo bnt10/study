@@ -18,13 +18,16 @@ else
     if [ $? -eq 0 ]; then
         echo "update-readme script executed successfully"
 
+        # readmeConfig.json 파일에서 readmePath 읽기
+        readme_path=$(node -e "console.log(require('./readmeConfig.json').readmePath || './README.md')")
+
         # README.md 파일을 스테이징
-        git add ./README.md
+        git add "$readme_path"
 
         if [ $? -eq 0 ]; then
-            echo "README.md successfully added to the staging area"
+            echo "$readme_path successfully added to the staging area"
         else
-            echo "Failed to add README.md to the staging area"
+            echo "Failed to add $readme_path to the staging area"
             exit 1
         fi
     else
