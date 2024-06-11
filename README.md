@@ -5,6 +5,7 @@
   - [config관리 방법](./src/projects/update-readme/config관리%20방법.md)
 ## troubleshooting
 ### git
+  - [DevContainer](./src/troubleshooting/git/DevContainer.md)
   - [Merage](./src/troubleshooting/git/Merage.md)
 ### influxdb
   - [Select 성능 저하](./src/troubleshooting/influxdb/Select%20성능%20저하.md)
