@@ -2,6 +2,7 @@
 
 ## projects
 ### golang
+  - [DBML](./src/projects/golang/DBML.md)
   - [project-setting](./src/projects/golang/project-setting.md)
 ### update-readme
   - [config관리 방법](./src/projects/update-readme/config관리%20방법.md)
