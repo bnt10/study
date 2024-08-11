@@ -12,6 +12,8 @@
   - [Merage](./src/troubleshooting/git/Merage.md)
 ### influxdb
   - [Select 성능 저하](./src/troubleshooting/influxdb/Select%20성능%20저하.md)
+### jest
+  - [No tests found](./src/troubleshooting/jest/No%20tests%20found.md)
 ### lint
   - [dependency-오류](./src/troubleshooting/lint/dependency-오류.md)
 ### Next.js
