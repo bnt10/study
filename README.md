@@ -53,6 +53,7 @@
 ### DB
   - [PostgreSQL VS MariaDB](./src/dev_notes/DB/PostgreSQL%20VS%20MariaDB.md)
 ### Git
+  - [LF vs CRLF](./src/dev_notes/Git/LF%20vs%20CRLF.md)
   - [pre-commit](./src/dev_notes/Git/pre-commit.md)
 ### golang
   - [json.Unmarshal vs json.Decoder](./src/dev_notes/golang/json.Unmarshal%20vs%20json.Decoder.md)
